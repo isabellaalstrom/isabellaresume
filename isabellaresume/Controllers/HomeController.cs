@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using isabellaresume.Entities;
+using isabellaresume.Models.ViewModels;
 
 namespace isabellaresume.Controllers
 {
@@ -10,6 +12,12 @@ namespace isabellaresume.Controllers
     {
         public ActionResult Index()
         {
+            var viewModel = new IndexViewModel()
+            {
+                Educations = TransformEducations(ReadEducations)
+                //samma sak här typ
+            };
+
             return View();
         }
 
@@ -26,5 +34,10 @@ namespace isabellaresume.Controllers
 
             return View();
         }
+
+        IEnumerable<EducationsItem> TransformEducations(IEnumerable<Education> educations)
+        {
+            return educations.Select(s => new EducationsItem { myProp = s.myProp, myProp2 = s.myProp2 })
+            }
     }
 }
