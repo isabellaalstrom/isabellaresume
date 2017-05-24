@@ -16,10 +16,10 @@ namespace isabellaresume.Controllers
     {
         public ActionResult Index()
         {
+            ReadEducations();
             var viewModel = new IndexViewModel()
             {
-                EducationItems = TransformEducations(ReadEducations())
-                //samma sak här typ
+                //EducationItems = TransformEducations(ReadEducations())
             };
 
             return View();
@@ -44,40 +44,40 @@ namespace isabellaresume.Controllers
             return educations.Select(s => new EducationItem { SchoolName = s.SchoolName,  });
         }
 
-        public IEnumerable<Education> ReadEducations()
+        public Education ReadEducations()
         {
-            try
-            {
-                using (StreamReader r = new StreamReader(GetFilePath("MusicGenres.json")))
+            //try
+            //{
+                using (StreamReader r = new StreamReader("c:/users/isabella.alstrom/documents/visual studio 2015/Projects/isabellaresume/isabellaresume/JsonFiles/Swedish/educations.json"))
                 {
                     string json = r.ReadToEnd();
-                    var educations = JsonConvert.DeserializeObject<IEnumerable<Education>>(json);
-
+                    var educations = JsonConvert.DeserializeObject<Education>(json);
+                //todo måste göra en modell, en item och en "vanlig". kan inte serializera lista osv
                     return educations;
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //    throw;
+            //}
         }
         private static string GetFilePath(string fileName)
         {
             string filePath;
 
-            try
-            {
-                filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, "MusicRecommendation.Services", "JsonFiles", fileName);
+            //try
+            //{
+                filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, "JsonFiles", "Swedish", fileName);
 
                 return filePath;
-            }
-            catch (Exception)
-            {
-                filePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath.Replace("MusicRecommendation.Web", "MusicRecommendation.Services"), "JsonFiles", fileName);
+            //}
+            //catch (Exception)
+            //{
+            //    filePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath.Replace("MusicRecommendation.Web", "MusicRecommendation.Services"), "JsonFiles", fileName);
 
-                return filePath;
-            }
+            //    return filePath;
+            //}
         }
     }
 }
