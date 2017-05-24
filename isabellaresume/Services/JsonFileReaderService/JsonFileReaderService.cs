@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Hosting;
 using isabellaresume.Entities;
 using isabellaresume.Models;
+using isabellaresume.Services.JsonFileReaderService.Models;
 using Newtonsoft.Json;
 
 namespace isabellaresume.Services.JsonFileReaderService

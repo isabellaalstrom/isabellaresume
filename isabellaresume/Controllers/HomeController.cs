@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using isabellaresume.Entities;
 using isabellaresume.Models.ViewModels;
+using isabellaresume.Services.JsonFileReaderService.Models;
+using Newtonsoft.Json;
 
 namespace isabellaresume.Controllers
 {
@@ -14,7 +18,7 @@ namespace isabellaresume.Controllers
         {
             var viewModel = new IndexViewModel()
             {
-                Educations = TransformEducations(ReadEducations)
+                EducationItems = TransformEducations(ReadEducations())
                 //samma sak här typ
             };
 
@@ -35,9 +39,45 @@ namespace isabellaresume.Controllers
             return View();
         }
 
-        IEnumerable<EducationsItem> TransformEducations(IEnumerable<Education> educations)
+        IEnumerable<EducationItem> TransformEducations(IEnumerable<Education> educations)
         {
-            return educations.Select(s => new EducationsItem { myProp = s.myProp, myProp2 = s.myProp2 })
+            return educations.Select(s => new EducationItem { SchoolName = s.SchoolName,  });
+        }
+
+        public IEnumerable<Education> ReadEducations()
+        {
+            try
+            {
+                using (StreamReader r = new StreamReader(GetFilePath("MusicGenres.json")))
+                {
+                    string json = r.ReadToEnd();
+                    var educations = JsonConvert.DeserializeObject<IEnumerable<Education>>(json);
+
+                    return educations;
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        private static string GetFilePath(string fileName)
+        {
+            string filePath;
+
+            try
+            {
+                filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, "MusicRecommendation.Services", "JsonFiles", fileName);
+
+                return filePath;
+            }
+            catch (Exception)
+            {
+                filePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath.Replace("MusicRecommendation.Web", "MusicRecommendation.Services"), "JsonFiles", fileName);
+
+                return filePath;
+            }
+        }
     }
 }

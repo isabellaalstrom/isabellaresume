@@ -10,7 +10,7 @@ namespace isabellaresume.Entities
     {
         public string CourseName { get; set; }
         public string Description { get; set; }
-        public Education AssociatedEducation { get; set; }
+        public EducationItem AssociatedEducation { get; set; }
         public Workplace AssociatedWorkplace { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
