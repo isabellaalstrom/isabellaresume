@@ -1,0 +1,40 @@
+﻿{
+  "workplaces": [
+    {
+      "companyname": "SVT",
+      "locationname": "Stockholm, Sverige",
+      "startdate": "2011-10",
+      "enddate": "",
+      "current": "true",
+      "position": "Direkttextare",
+      "description": "Tjänsten består i huvudsak av direkttextning av nyheter, evenemang och annat direktsänt, men även en del reprisbearbetning, korrekturläsning och svensktextning av förproducerat material för SVT. Är fackligt ombud för Unionen på avdelningen sedan oktober 2015."
+    },
+    {
+      "companyname": "Mogul",
+      "locationname": "Stockholm, Sverige",
+      "startdate": "2017-02",
+      "enddate": "2017-05",
+      "current": "false",
+      "position": "Praktikant",
+      "description": "EPiServer, ASP.NET MVC, HTML5, CSS3, Bootstrap, JavaScript, jQuery m.m."
+    },
+    {
+      "companyname": "SVT",
+      "locationname": "Stockholm, Sverige",
+      "startdate": "2015-08",
+      "enddate": "2015-10",
+      "current": "false",
+      "position": "Gruppchef",
+      "description": "Tf. gruppchef för 24 nyhetstextare på SVT Undertext. Arbetsuppgifterna innehöll bland annat schemaläggning, långsiktig planering av verksamheten, möten med redaktioner på SVT för att optimera textning."
+    },
+    {
+      "companyname": "Svenska McDonalds AB",
+      "locationname": "Stockholm, Sverige",
+      "startdate": "2007-08",
+      "enddate": "2011-08",
+      "current": "false",
+      "position": "Handledare",
+      "description": "Jobbade i kök, kassa och med att utbilda nya medarbetare."
+    }
+  ]
+}

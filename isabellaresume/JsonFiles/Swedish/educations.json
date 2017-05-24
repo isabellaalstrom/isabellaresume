@@ -1,0 +1,28 @@
+﻿{
+  "educations": [
+      {
+        "schoolname": "Nackademin",
+        "degreename": "YH",
+        "startdate": "2016-08",
+        "enddate": "2018-06",
+        "fieldofstudy": "Programutveckling .NET",
+        "description": "",
+        "linktoeducation": "http://nackademin.se/utbildningar/programutvecklare-net/",
+        "courses": [
+          { }
+        ]
+      },
+      {
+        "schoolname": "Södertörns Folkhögskola",
+        "degreename": "YH",
+        "startdate": "2010",
+        "enddate": "2011",
+        "fieldofstudy": "Skrivtolkning och mediatextning",
+        "description": "",
+        "linktoeducation": "",
+        "courses": [
+          { }
+        ]
+      }
+  ]
+}
