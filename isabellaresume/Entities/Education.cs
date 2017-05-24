@@ -5,12 +5,12 @@ using System.Web;
 
 namespace isabellaresume.Entities
 {
-    public class EducationItem
+    public class Education
     {
         public string SchoolName { get; set; }
         public string DegreeName { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
         public string FieldOfStudy { get; set; }
         public string Description { get; set; }
         public string LinkToEducation { get; set; }

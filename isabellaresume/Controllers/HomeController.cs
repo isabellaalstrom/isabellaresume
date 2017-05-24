@@ -16,13 +16,13 @@ namespace isabellaresume.Controllers
     {
         public ActionResult Index()
         {
-            ReadEducations();
+            //ReadEducations();
             var viewModel = new IndexViewModel()
             {
-                //EducationItems = TransformEducations(ReadEducations())
+                Educations = TransformEducations(ReadEducations())
             };
 
-            return View();
+            return View(viewModel);
         }
 
         public ActionResult About()
@@ -39,28 +39,38 @@ namespace isabellaresume.Controllers
             return View();
         }
 
-        IEnumerable<EducationItem> TransformEducations(IEnumerable<Education> educations)
+        IEnumerable<Education> TransformEducations(EducationModel educations)
         {
-            return educations.Select(s => new EducationItem { SchoolName = s.SchoolName,  });
+                //todo måste göra en modell, en item och en "vanlig". kan inte serializera lista osv
+            return educations.EducationItems.Select(s => new Education
+            {
+                SchoolName = s.SchoolName,
+                FieldOfStudy = s.FieldOfStudy,
+                DegreeName = s.DegreeName,
+                Description = s.Description,
+                Start = s.Start, End = s.End,
+                LinkToEducation = s.LinkToEducation
+            });
         }
 
-        public Education ReadEducations()
+        public EducationModel ReadEducations()
         {
-            //try
-            //{
-                using (StreamReader r = new StreamReader("c:/users/isabella.alstrom/documents/visual studio 2015/Projects/isabellaresume/isabellaresume/JsonFiles/Swedish/educations.json"))
+            try
+            {
+                var filePath = "C:/Users/Isabella/Source/Repos/isabellaresume/isabellaresume/JsonFiles/Swedish/educations.json"; //todo GetFilePath() som hämtar path
+                //var filePath = "c:/users/isabella.alstrom/documents/visual studio 2015/Projects/isabellaresume/isabellaresume/JsonFiles/Swedish/educations.json";
+                using (StreamReader r = new StreamReader(filePath))
                 {
                     string json = r.ReadToEnd();
-                    var educations = JsonConvert.DeserializeObject<Education>(json);
-                //todo måste göra en modell, en item och en "vanlig". kan inte serializera lista osv
+                    var educations = JsonConvert.DeserializeObject<EducationModel>(json);
                     return educations;
                 }
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine(e);
-            //    throw;
-            //}
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
         private static string GetFilePath(string fileName)
         {
