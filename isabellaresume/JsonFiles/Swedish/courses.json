@@ -1,0 +1,68 @@
+﻿[
+  {
+    "coursename": "Programmering C#",
+    "description": "",
+    "associatededucation": "Programutvecklare .NET",
+    "associatedworkplace": "",
+    "start": "",
+    "end": ""
+  },
+  {
+    "coursename": "Databasteknik",
+    "description": "MSSQL, Entity Framework",
+    "associatededucation": "Programutvecklare .NET",
+    "associatedworkplace": "",
+    "start": "",
+    "end": ""
+  },
+  {
+    "coursename": "Frontend",
+    "description": "HTML5, CSS3, JavaScript, jQuery, Bootstrap",
+    "associatededucation": "Programutvecklare .NET",
+    "associatedworkplace": "",
+    "start": "",
+    "end": ""
+  },
+  {
+    "coursename": "Programmering med C# ASP.NET 1",
+    "description": "ASP.NET MVC Core",
+    "associatededucation": "Programutvecklare .NET",
+    "associatedworkplace": "",
+    "start": "",
+    "end": ""
+  },
+  {
+    "coursename": "Frontend fördjupning",
+    "description": "JavaScript, jQuery, Angular JS, Angular 2",
+    "associatededucation": "Programutvecklare .NET",
+    "associatedworkplace": "",
+    "start": "",
+    "end": ""
+  },
+  {
+    "coursename": "LIA 1",
+    "description": "EPiServer, ASP.NET MVC 5",
+    "associatededucation": "Programutvecklare .NET",
+    "associatedworkplace": "",
+    "start": "2017-02",
+    "end": "2017-05"
+  },
+  {
+    "coursename": "Chefsansvaret - Ekonomi och programetik",
+    "description": "",
+    "associatededucation": "",
+    "associatedworkplace": "Gruppchef på SVT",
+    "start": "",
+    "end": ""
+  },
+  {
+    "coursename": "Chefsansvaret - Kompentensbaserad rekrytering och mångfald",
+    "description": "",
+    "associatededucation": "",
+    "associatedworkplace": "Gruppchef på SVT",
+    "start": "",
+    "end": ""
+  }
+]
+
+//todo

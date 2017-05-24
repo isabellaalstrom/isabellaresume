@@ -9,7 +9,8 @@ namespace isabellaresume.Models.ViewModels
 {
     public class IndexViewModel
     {
-        public IEnumerable<Education> Educations { get; set; }
+        public IEnumerable<EducationItem> Educations { get; set; }
+        public IEnumerable<WorkPlaceItem> WorkPlaces { get; set; }
         //todo ladda in all info från alla andra klasser i listor
     }
 }

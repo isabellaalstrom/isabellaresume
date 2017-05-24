@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using isabellaresume.Entities;
 using Newtonsoft.Json;
 
 namespace isabellaresume.Services.JsonFileReaderService.Models
 {
-    public class EducationItem
+    public class WorkPlaceItem
     {
-        public string SchoolName { get; set; }
-        public string DegreeName { get; set; }
+        public string CompanyName { get; set; }
+        public string LocationName { get; set; }
         public string Start { get; set; }
         public string End { get; set; }
-        public string FieldOfStudy { get; set; }
+        public bool Current { get; set; }
+        public string Position { get; set; }
         public string Description { get; set; }
-        public string LinkToEducation { get; set; }
-        //public IEnumerable<Course> Courses { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿{
-  "educations": [
+﻿[
       {
         "schoolname": "Nackademin",
         "degreename": "YH",
@@ -19,4 +18,3 @@
         "linktoeducation": ""
       }
   ]
-}

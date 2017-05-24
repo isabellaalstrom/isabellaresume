@@ -1,5 +1,4 @@
-﻿{
-  "workplaces": [
+﻿[
     {
       "companyname": "SVT",
       "locationname": "Stockholm, Sverige",
@@ -37,4 +36,3 @@
       "description": "Jobbade i kök, kassa och med att utbilda nya medarbetare."
     }
   ]
-}

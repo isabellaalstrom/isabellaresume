@@ -11,10 +11,11 @@ namespace isabellaresume.Services.JsonFileReaderService
 {
     public interface IJsonFileReaderService
     {
-        IEnumerable<Education> ReadEducations();
-        Workplace ReadWorkplace();
-        Language ReadLanguage();
-        Course ReadCourse();
-        Project ReadProject();
+        Context ReadJsonFiles(Context context);
+        Context ReadEducations(Context context);
+        Context ReadWorkplaces(Context context);
+        //Context ReadLanguages(Context context);
+        //Context ReadCourses(Context context);
+        //Context ReadProjects(Context context);
     }
 }

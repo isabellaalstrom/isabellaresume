@@ -10,3 +10,14 @@
     </tr>
 }
 </table>
+
+<h1>My Workplaces</h1>
+<table class="table-striped table-responsive table">
+    @foreach (var workplace in Model.WorkPlaces)
+    {
+        <tr>
+            <td>@workplace.CompanyName</td>
+            <td>@workplace.Position</td>
+        </tr>
+    }
+</table>

@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entities\Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -128,6 +129,7 @@
     <Compile Include="Entities\Education.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\Project.cs" />
+    <Compile Include="Services\JsonFileReaderService\Models\WorkPlaceModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="Entities\Workplace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +149,9 @@
     <Content Include="Static\Scripts\bootstrap.min.js" />
     <Content Include="JsonFiles\Swedish\educations.json" />
     <Content Include="JsonFiles\Swedish\workplaces.json" />
+    <Content Include="JsonFiles\Swedish\languages.json" />
+    <Content Include="JsonFiles\Swedish\courses.json" />
+    <Content Include="JsonFiles\Swedish\projects.json" />
     <None Include="Static\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.min.js" />

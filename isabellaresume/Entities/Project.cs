@@ -9,10 +9,10 @@ namespace isabellaresume.Entities
     {
         public string ProjectName { get; set; }
         public string Description { get; set; }
-        public Education AssociatedEducation { get; set; }
-        public Workplace AssociatedWorkplace { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string AssociatedEducation { get; set; }
+        public string AssociatedWorkplace { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
         public bool Ongoing { get; set; }
     }
 }

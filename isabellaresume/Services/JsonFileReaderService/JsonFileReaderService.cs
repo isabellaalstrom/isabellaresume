@@ -11,18 +11,27 @@ using Newtonsoft.Json;
 
 namespace isabellaresume.Services.JsonFileReaderService
 {
-    public class JsonFileReaderService : IJsonFileReaderService
+    public class JsonFileReaderService
     {
-        public IEnumerable<Education> ReadEducations()
+        private static Context _context;
+        public Context ReadJsonFiles(Context context)
+        {
+            _context = context;
+            ReadEducations();
+            ReadWorkplaces();
+            return _context;
+        }
+
+        public void ReadEducations()
         {
             try
             {
-                using (StreamReader r = new StreamReader(GetFilePath("MusicGenres.json")))
+                var filePath = GetFilePath("educations");
+
+                using (StreamReader r = new StreamReader(filePath))
                 {
                     string json = r.ReadToEnd();
-                    var educations = JsonConvert.DeserializeObject<IEnumerable<Education>>(json);
-
-                    return educations;
+                    _context = JsonConvert.DeserializeObject<Context>(json);
                 }
             }
             catch (Exception e)
@@ -32,42 +41,44 @@ namespace isabellaresume.Services.JsonFileReaderService
             }
         }
 
-        public Workplace ReadWorkplace()
+        public void ReadWorkplaces()
         {
-            throw new NotImplementedException();
-        }
-
-        public Language ReadLanguage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Course ReadCourse()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Project ReadProject()
-        {
-            throw new NotImplementedException();
-        }
-
-        private static string GetFilePath(string fileName)
-        {
-            string filePath;
-
             try
             {
-                filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, "MusicRecommendation.Services", "JsonFiles", fileName);
+                var filePath = GetFilePath("workplaces");
 
-                return filePath;
+                using (StreamReader r = new StreamReader(filePath))
+                {
+                    string json = r.ReadToEnd();
+                    _context = JsonConvert.DeserializeObject<Context>(json);
+                }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                filePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath.Replace("MusicRecommendation.Web", "MusicRecommendation.Services"), "JsonFiles", fileName);
-
-                return filePath;
+                Console.WriteLine(e);
+                throw;
             }
+        }
+
+        //public Context ReadLanguages(Context context)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Context ReadCourses(Context context)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Context ReadProjects(Context context)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        private static string GetFilePath(string fileName)
+        //todo GetFilePath() som hämtar path
+        {
+            return $"C:/Users/Isabella/Source/Repos/isabellaresume/isabellaresume/JsonFiles/Swedish/{fileName}.json";
         }
     }
 }
