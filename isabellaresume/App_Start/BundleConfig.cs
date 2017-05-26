@@ -22,7 +22,8 @@ namespace isabellaresume
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Static/Scripts/bootstrap.js",
                       "~/Static/Scripts/respond.js",
-                      "~/Static/Scripts/timeline.js"));
+                      "~/Static/Scripts/timeline.js",
+                      "~/Static/Scripts/main.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Static/css/bootstrap.css",

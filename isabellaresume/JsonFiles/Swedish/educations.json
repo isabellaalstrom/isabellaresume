@@ -4,15 +4,56 @@
         "degreename": "YH",
         "start": "2016-08",
         "end": "2018-06",
-        "fieldofstudy": "Programutveckling .NET",
+        "fieldofstudy": "Programutvecklare .NET",
         "description": "",
-        "linktoeducation": "http://nackademin.se/utbildningar/programutvecklare-net/"
+        "linktoeducation": "http://nackademin.se/utbildningar/programutvecklare-net/",
+        "courses": [
+          {
+            "coursename": "LIA 1",
+            "description": "EPiServer, ASP.NET MVC 5",
+            "associatededucation": "Programutvecklare .NET",
+            "associatedworkplace": ""
+          },
+          {
+            "coursename": "Frontend fördjupning",
+            "description": "JavaScript, jQuery, Angular JS, Angular 2",
+            "associatededucation": "Programutvecklare .NET",
+            "associatedworkplace": ""
+          },
+          {
+            "coursename": "Programmering med C# ASP.NET 1",
+            "description": "ASP.NET MVC Core",
+            "associatededucation": "Programutvecklare .NET",
+            "associatedworkplace": ""
+          },
+          {
+            "coursename": "Frontend",
+            "description": "HTML5, CSS3, JavaScript, jQuery, Bootstrap",
+            "associatededucation": "Programutvecklare .NET",
+            "associatedworkplace": ""
+          },
+          {
+            "coursename": "Databasteknik",
+            "description": "MSSQL, Entity Framework",
+            "associatededucation": "Programutvecklare .NET",
+            "associatedworkplace": ""
+          },
+          {
+            "coursename": "Programmering C#",
+            "description": "",
+            "associatededucation": "Programutvecklare .NET",
+            "associatedworkplace": ""
+          }
+        ],
+        "projects": [
+
+        ] 
       },
       {
         "schoolname": "Södertörns Folkhögskola",
         "degreename": "YH",
-        "start": "2010",
-        "end": "2011",
+        "start": "2010-09",
+        "end": "2011-06",
         "fieldofstudy": "Skrivtolkning och mediatextning",
         "description": "",
         "linktoeducation": ""

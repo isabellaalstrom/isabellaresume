@@ -13,6 +13,7 @@ namespace isabellaresume.Models.ViewModels
         public IEnumerable<CourseItem> Courses{ get; set; }
         public IEnumerable<ProjectItem> Projects { get; set; }
         public IEnumerable<LanguageItem> Languages { get; set; }
+        public IEnumerable<TimelineItem> TimelineItems { get; set; }
         //todo skills
     }
 }

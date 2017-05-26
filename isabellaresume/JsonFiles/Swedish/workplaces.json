@@ -1,36 +1,85 @@
 ﻿[
+  {
+    "companyname": "SVT",
+    "locationname": "Stockholm, Sverige",
+    "startdate": "2011-10-06",
+    "enddate": "",
+    "current": "true",
+    "position": "Direkttextare",
+    "description": "Tjänsten består i huvudsak av direkttextning av nyheter, evenemang och annat direktsänt, men även en del reprisbearbetning, korrekturläsning och svensktextning av förproducerat material för SVT. Är fackligt ombud för Unionen på avdelningen sedan oktober 2015.",
+    "projects": [
+      {
+        "projectname": "Offentlig upphandling Taligenkänning",
+        "description": "Specialistkompetens i utvärderingsgrupp för offentlig upphandling av taligenkänningsprototyp för Post- och telestyrelsen..",
+        "associatededucation": "",
+        "associatedworkplace": "direkttextare på SVT",
+        "startdate": "2015-09",
+        "enddate": "2015-10",
+        "ongoing": "true"
+      },
+      {
+        "projectname": "Smash",
+        "description": "Beställarsidan av ett nytt system för undertextning av program, internutvecklat på SVT. Är superanvändare och mycket involverad i buggrapportering, beställning av nya funktioner och testning av programvaran. Utbildar och handleder kollegor i det nya systemet.",
+        "associatededucation": "",
+        "associatedworkplace": "direkttextare på SVT",
+        "startdate": "2012-03",
+        "enddate": "",
+        "ongoing": "true"
+      }
+    ]
+  },
+  {
+    "companyname": "Mogul",
+    "locationname": "Stockholm, Sverige",
+    "startdate": "2017-02-01",
+    "enddate": "2017-05-31",
+    "current": "false",
+    "position": "Praktikant",
+    "description": "EPiServer, ASP.NET MVC, HTML5, CSS3, Bootstrap, JavaScript, jQuery, Sass m.m.",
+    "projects": [
+      {
+        "projectname": "EKN",
+        "description": "Skuggutveckling",
+        "associatededucation": "",
+        "associatedworkplace": "praktikant på Mogul",
+        "startdate": "2017-02",
+        "enddate": "",
+        "ongoing": "false"
+      }
+    ]
+  },
     {
       "companyname": "SVT",
       "locationname": "Stockholm, Sverige",
-      "startdate": "2011-10",
-      "enddate": "",
-      "current": "true",
-      "position": "Direkttextare",
-      "description": "Tjänsten består i huvudsak av direkttextning av nyheter, evenemang och annat direktsänt, men även en del reprisbearbetning, korrekturläsning och svensktextning av förproducerat material för SVT. Är fackligt ombud för Unionen på avdelningen sedan oktober 2015."
-    },
-    {
-      "companyname": "Mogul",
-      "locationname": "Stockholm, Sverige",
-      "startdate": "2017-02",
-      "enddate": "2017-05",
-      "current": "false",
-      "position": "Praktikant",
-      "description": "EPiServer, ASP.NET MVC, HTML5, CSS3, Bootstrap, JavaScript, jQuery, Sass m.m."
-    },
-    {
-      "companyname": "SVT",
-      "locationname": "Stockholm, Sverige",
-      "startdate": "2015-08",
-      "enddate": "2015-10",
+      "startdate": "2015-08-01",
+      "enddate": "2015-10-31",
       "current": "false",
       "position": "Gruppchef",
-      "description": "Tf. gruppchef för 24 nyhetstextare på SVT Undertext. Arbetsuppgifterna innehöll bland annat schemaläggning, långsiktig planering av verksamheten, möten med redaktioner på SVT för att optimera textning."
+      "description": "Tf. gruppchef för 24 nyhetstextare på SVT Undertext. Arbetsuppgifterna innehöll bland annat schemaläggning, långsiktig planering av verksamheten, möten med redaktioner på SVT för att optimera textning.",
+      "courses": [
+        {
+          "coursename": "Chefsansvaret - Ekonomi och programetik",
+          "description": "",
+          "associatededucation": "",
+          "associatedworkplace": "gruppchef på SVT",
+          "startdate": "2015-08",
+          "enddate": ""
+        },
+        {
+          "coursename": "Chefsansvaret - Kompentensbaserad rekrytering och mångfald",
+          "description": "",
+          "associatededucation": "",
+          "associatedworkplace": "gruppchef på SVT",
+          "startdate": "2015-08",
+          "enddate": ""
+        }
+      ]
     },
     {
       "companyname": "Svenska McDonalds AB",
       "locationname": "Stockholm, Sverige",
-      "startdate": "2007-08",
-      "enddate": "2011-08",
+      "startdate": "2007-08-01",
+      "enddate": "2011-08-01",
       "current": "false",
       "position": "Handledare",
       "description": "Jobbade i kök, kassa och med att utbilda nya medarbetare."

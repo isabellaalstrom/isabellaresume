@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using isabellaresume.Models;
 using Newtonsoft.Json;
 
 namespace isabellaresume.Entities
@@ -14,11 +15,11 @@ namespace isabellaresume.Entities
         [JsonProperty("locationname")]
         public string LocationName { get; set; }
 
-        [JsonProperty("start")]
-        public string Start { get; set; }
+        [JsonProperty("startdate")]
+        public string StartDate { get; set; }
 
-        [JsonProperty("end")]
-        public string End { get; set; }
+        [JsonProperty("enddate")]
+        public string EndDate { get; set; }
 
         [JsonProperty("current")]
         public bool Current { get; set; }
@@ -28,5 +29,11 @@ namespace isabellaresume.Entities
 
         [JsonProperty("description")]
         public string Description { get; set; }
+
+        [JsonProperty("courses")]
+        public IEnumerable<CourseItem> Courses { get; set; }
+
+        [JsonProperty("projects")]
+        public IEnumerable<ProjectItem> Projects { get; set; }
     }
 }

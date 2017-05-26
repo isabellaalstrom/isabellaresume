@@ -1,0 +1,107 @@
+﻿@import "partials/variables";
+/*
+Ref:
+Thanks to:
+http://span-tag.com/bootstrap-navbar/
+*/
+
+
+.nav {
+    li {
+        /*position: absolute;*/
+        /*top: 0;
+        left: 0;*/
+        .img-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
+            padding: 1px;
+            img {
+                display: block;
+                width: 24px;
+                height: 24px;
+                position: relative;
+                left: 50%;
+                top: 50%;
+                margin-left: -12px;
+                margin-top: -12px;
+            }
+
+            &.workplace {
+                background: $color-4;
+            }
+
+            &.education {
+                background: $color-6;
+            }
+
+            &.project {
+                width: 40px;
+                height: 40px;
+                margin-left: -20px;
+                background: $color-1;
+            }
+
+            &.course {
+                width: 40px;
+                height: 40px;
+                margin-left: -20px;
+                background: $color-5;
+            }
+        }
+        a{
+            display: inline-block;
+        }
+    }
+}
+/* added to  .nav */
+.normal {
+    height: 75px; /* this causes drop down to lose color ??? */
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 12px;
+}
+
+.normal .navbar-right {
+    padding-top: 12px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+/*.navbar-brand {
+padding: 0px !important;
+}
+.navbar-brand img {
+padding: 5px;
+max-height: 75px;
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-ms-transition: 0.5s;
+transition: 0.5s;
+}*/
+.shrink {
+    height: 50px;
+    padding-top: 0px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+/*.shrink .navbar-right {
+padding-top: 0px;
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-ms-transition: 0.5s;
+transition: 0.5s;
+}*/
+/*.shrink .navbar-brand img {
+max-height: 50px;
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-ms-transition: 0.5s;
+transition: 0.5s;
+}*/

@@ -129,7 +129,9 @@
     <Compile Include="Entities\Education.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\Project.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\TimelineModel.cs" />
     <Compile Include="Models\LanguageModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Models\WorkPlaceModel.cs" />
@@ -144,6 +146,12 @@
     <Content Include="Static\Content\img\cd-icon-location.svg" />
     <Content Include="Static\Content\img\cd-icon-movie.svg" />
     <Content Include="Static\Content\img\cd-icon-picture.svg" />
+    <Content Include="Static\Content\img\course.svg" />
+    <Content Include="Static\Content\img\workplace.svg" />
+    <Content Include="Static\Content\img\project.svg" />
+    <Content Include="Static\Content\img\education.svg" />
+    <Content Include="Static\Content\img\language.svg" />
+    <Content Include="Static\Scripts\main.js" />
     <Content Include="Static\Scripts\timeline.js" />
     <Content Include="Static\css\bootstrap.css" />
     <Content Include="Static\css\bootstrap.min.css" />
@@ -230,10 +238,11 @@
     <Content Include="Static\fonts\FontAwesome.otf" />
     <Content Include="Static\sass\custom.scss" />
     <Content Include="Static\Content\img\.DS_Store" />
-    <Content Include="Static\sass\style.scss" />
+    <Content Include="Static\sass\timeline.scss" />
     <Content Include="Static\sass\partials\_layout.scss" />
     <Content Include="Static\sass\partials\_mixins.scss" />
     <Content Include="Static\sass\partials\_variables.scss" />
+    <Content Include="Static\sass\header.scss" />
     <None Include="Static\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.min.js" />

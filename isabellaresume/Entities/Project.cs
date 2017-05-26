@@ -20,11 +20,11 @@ namespace isabellaresume.Entities
         [JsonProperty("associatedworkplace")]
         public string AssociatedWorkplace { get; set; }
 
-        [JsonProperty("start")]
-        public string Start { get; set; }
+        //[JsonProperty("start")]
+        //public string StartDate { get; set; }
 
-        [JsonProperty("end")]
-        public string End { get; set; }
+        //[JsonProperty("end")]
+        //public string EndDate { get; set; }
 
         [JsonProperty("ongoing")]
         public bool Ongoing { get; set; }

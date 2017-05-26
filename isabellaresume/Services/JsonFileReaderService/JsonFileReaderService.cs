@@ -18,9 +18,9 @@ namespace isabellaresume.Services.JsonFileReaderService
             _context = context;
             ReadEducations();
             ReadWorkplaces();
-            ReadCourses();
+            //ReadCourses();
             ReadLanguages();
-            ReadProjects();
+            //ReadProjects();
             return _context;
         }
 
@@ -81,43 +81,43 @@ namespace isabellaresume.Services.JsonFileReaderService
             }
         }
 
-        public void ReadCourses()
-        {
-            try
-            {
-                var filePath = GetFilePath("courses");
+        //public void ReadCourses()
+        //{
+        //    try
+        //    {
+        //        var filePath = GetFilePath("courses");
 
-                using (StreamReader r = new StreamReader(filePath))
-                {
-                    string json = r.ReadToEnd();
-                    _context.Courses = JsonConvert.DeserializeObject<List<Course>>(json);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
+        //        using (StreamReader r = new StreamReader(filePath))
+        //        {
+        //            string json = r.ReadToEnd();
+        //            _context.Courses = JsonConvert.DeserializeObject<List<Course>>(json);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e);
+        //        throw;
+        //    }
+        //}
 
-        public void ReadProjects()
-        {
-            try
-            {
-                var filePath = GetFilePath("projects");
+        //public void ReadProjects()
+        //{
+        //    try
+        //    {
+        //        var filePath = GetFilePath("projects");
 
-                using (StreamReader r = new StreamReader(filePath))
-                {
-                    string json = r.ReadToEnd();
-                    _context.Projects = JsonConvert.DeserializeObject<List<Project>>(json);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
+        //        using (StreamReader r = new StreamReader(filePath))
+        //        {
+        //            string json = r.ReadToEnd();
+        //            _context.Projects = JsonConvert.DeserializeObject<List<Project>>(json);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e);
+        //        throw;
+        //    }
+        //}
 
         private static string GetFilePath(string fileName)
         //todo hämta path automatiskt

@@ -14,7 +14,7 @@ namespace isabellaresume.Services.JsonFileReaderService
         void ReadEducations();
         void ReadWorkplaces();
         void ReadLanguages();
-        void ReadCourses();
-        void ReadProjects();
+        //void ReadCourses();
+        //void ReadProjects();
     }
 }

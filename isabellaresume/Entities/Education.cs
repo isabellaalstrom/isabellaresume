@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using isabellaresume.Models;
 using Newtonsoft.Json;
 
 namespace isabellaresume.Entities
@@ -15,10 +16,10 @@ namespace isabellaresume.Entities
         public string DegreeName { get; set; }
 
         [JsonProperty("start")]
-        public string Start { get; set; }
+        public string StartDate { get; set; }
 
         [JsonProperty("end")]
-        public string End { get; set; }
+        public string EndDate { get; set; }
 
         [JsonProperty("fieldofstudy")]
         public string FieldOfStudy { get; set; }
@@ -28,6 +29,11 @@ namespace isabellaresume.Entities
 
         [JsonProperty("linktoeducation")]
         public string LinkToEducation { get; set; }
-        //public IEnumerable<Course> Courses { get; set; }
+
+        [JsonProperty("courses")]
+        public IEnumerable<CourseItem> Courses { get; set; }
+
+        [JsonProperty("projects")]
+        public IEnumerable<ProjectItem> Projects { get; set; }
     }
 }

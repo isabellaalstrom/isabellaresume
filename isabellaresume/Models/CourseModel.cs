@@ -11,7 +11,8 @@ namespace isabellaresume.Models
         public string Description { get; set; }
         public string AssociatedEducation { get; set; }
         public string AssociatedWorkplace { get; set; }
-        public string Start { get; set; }
-        public string End { get; set; }
+        //public DateTime StartDate { get; set; }
+        //public DateTime EndDate { get; set; }
+        public bool Ongoing { get; set; }
     }
 }

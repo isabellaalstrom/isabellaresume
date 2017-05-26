@@ -1,103 +1,213 @@
-﻿@model isabellaresume.Models.ViewModels.IndexViewModel
-
+﻿@using Microsoft.Ajax.Utilities
+@using isabellaresume.Helpers
+@model isabellaresume.Models.ViewModels.IndexViewModel
 
 <section id="cd-timeline" class="cd-container">
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-            <img src="~/Static/Content/img/cd-icon-picture.svg" alt="Picture"/>
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content">
-            <h2>Title of section 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-            <a href="#0" class="cd-read-more">Read more</a>
-            <span class="cd-date">Jan 14</span>
-        </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-            <img src="~/Static/Content/img/cd-icon-movie.svg" alt="Movie">
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content">
-            <h2>Title of section 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-            <a href="#0" class="cd-read-more">Read more</a>
-            <span class="cd-date">Jan 18</span>
-        </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-            <img src="~/Static/Content/img/cd-icon-picture.svg" alt="Picture">
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content">
-            <h2>Title of section 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-            <a href="#0" class="cd-read-more">Read more</a>
-            <span class="cd-date">Jan 24</span>
-        </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-            <img src="~/Static/Content/img/cd-icon-location.svg" alt="Location">
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content">
-            <h2>Title of section 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-            <a href="#0" class="cd-read-more">Read more</a>
-            <span class="cd-date">Feb 14</span>
-        </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-            <img src="~/Static/Content/img/cd-icon-location.svg" alt="Location">
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content">
-            <h2>Title of section 5</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-            <a href="#0" class="cd-read-more">Read more</a>
-            <span class="cd-date">Feb 18</span>
-        </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-            <img src="~/Static/Content/img/cd-icon-movie.svg" alt="Movie">
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content">
-            <h2>Final Section</h2>
-            <p>This is the content of the last section</p>
-            <span class="cd-date">Feb 26</span>
-        </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
+
+    @for (int i = 0; i < Model.TimelineItems.Count(); i++)
+    {
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-@Model.TimelineItems.ElementAt(i).Type">
+                @{ var imageName = Model.TimelineItems.ElementAt(i).Type + ".svg"; }
+                <img src="~/Static/Content/img/@imageName" alt="Picture" />
+            </div> <!-- cd-timeline-img -->
+            <div class="cd-timeline-content">
+                <p>@Model.TimelineItems.ElementAt(i).Location</p>
+                <h2>@(Model.TimelineItems.ElementAt(i).Title.IsNullOrWhiteSpace() ? "" : @Model.TimelineItems.ElementAt(i).Title + " på") @Model.TimelineItems.ElementAt(i).Name</h2>
+                <p>@Model.TimelineItems.ElementAt(i).Description</p>
+                @if (!string.IsNullOrEmpty(Model.TimelineItems.ElementAt(i).LinkToEducation))
+                {
+                    <a href="@Model.TimelineItems.ElementAt(i).LinkToEducation" target="_blank"class="cd-read-more">Läs om utbildningen</a>
+                }
+
+                <span class="cd-date">
+                    @Model.TimelineItems.ElementAt(i).StartDate.ToString("yyyy MMM") -
+                    @if (Model.TimelineItems.ElementAt(i).Ongoing)
+                    {
+                        <span>pågående</span>
+                    }
+                    else
+                    {
+                        @Model.TimelineItems.ElementAt(i).EndDate.ToString("yyyy MMM")
+                    }
+                    <br />
+                    <span>@Html.GetTotalTime(Model.TimelineItems.ElementAt(i).StartDate, Model.TimelineItems.ElementAt(i).EndDate)</span>
+
+                </span><!-- cd-date -->
+            </div> <!-- cd-timeline-content -->
+        </div>
+                            if (Model.TimelineItems.ElementAt(i).Courses != null)
+                            {
+                                foreach (var course in @Model.TimelineItems.ElementAt(i).Courses)
+                                {
+
+                                    <div class="cd-timeline-block course-block">
+                                        <div class="cd-timeline-img cd-course">
+                                            <img src="~/Static/Content/img/course.svg" alt="Course">
+                                        </div> <!-- cd-timeline-img -->
+                                        <div class="cd-timeline-content course-content">
+                                            <p>Kurs @(course.AssociatedEducation.IsNullOrWhiteSpace() ? "som " + course.AssociatedWorkplace : "på " + course.AssociatedEducation)</p>
+                                            <h2>@course.CourseName</h2>
+                                            <p>@course.Description</p>
+                                            @*<a href="#0" class="cd-read-more">Se mer om kursen</a>*@
+                                            <span class="cd-date"></span>
+                                        </div> <!-- cd-timeline-content -->
+                                    </div> <!-- cd-timeline-block -->
+                        }
+                    }
+                    if (Model.TimelineItems.ElementAt(i).Projects != null)
+                    {
+                        foreach (var project in @Model.TimelineItems.ElementAt(i).Projects)
+                        {
+
+                            <div class="cd-timeline-block course-block">
+                                <div class="cd-timeline-img cd-project">
+                                    <img src="~/Static/Content/img/project.svg" alt="Project">
+                                </div> <!-- cd-timeline-img -->
+                                <div class="cd-timeline-content course-content">
+                                    <p>Projekt som @(project.AssociatedEducation.IsNullOrWhiteSpace() ? project.AssociatedWorkplace : project.AssociatedEducation)</p>
+                                    <h2>@project.ProjectName</h2>
+                                    <p>@project.Description</p>
+                                    @*<a href="#0" class="cd-read-more"></a>*@
+                                    <span class="cd-date"></span>
+                                </div> <!-- cd-timeline-content -->
+                            </div> <!-- cd-timeline-block -->
+                            }
+                        }
+
+                    } @*<!-- timelineitem for loop -->*@
 </section> <!-- cd-timeline -->
+                        @*@for (int i = 0; i < Model.WorkPlaces.Count(); i++)
+                            {
+                                <div class="cd-timeline-block">
+                                    <div class="cd-timeline-img cd-picture">
+                                        <img src="~/Static/Content/img/fa-building-o.svg" alt="Picture"/>
+                                    </div> <!-- cd-timeline-img -->
+                                    <div class="cd-timeline-content">
+                                        <h2>@Model.WorkPlaces.ElementAt(i).Position på @Model.WorkPlaces.ElementAt(i).CompanyName</h2>
+                                        <p>@Model.WorkPlaces.ElementAt(i).Description</p>
+                                        @*<a href="#0" class="cd-read-more">Read more</a>
+                                        <span class="cd-date">
+                                            @Model.WorkPlaces.ElementAt(i).StartDate.ToString("yyyy MMM") -
+                                            @if (@Model.WorkPlaces.ElementAt(i).Ongoing)
+                                            {
+                                                <span>pågående</span>
+                                            }
+                                            else
+                                            {
+                                                @Model.WorkPlaces.ElementAt(i).EndDate.ToString("yyyy MMM")
+                                            }
+                                            <br/>
+                                            <span> @*
+                                                @{
+                                                    var days = (Model.WorkPlaces.ElementAt(i).EndDate.Subtract(Model.WorkPlaces.ElementAt(i).StartDate)).Days;
+                                                    var years = days/365;
+                                                    var months = (days%365)/30;
+
+                                                    string total;
+
+                                                    if (years == 0)
+                                                    {
+                                                        total = $"{months} månader";
+                                                    }
+                                                    else if (months == 0)
+                                                    {
+                                                        total = $"{years} år";
+                                                    }
+                                                    else
+                                                    {
+                                                        total = $"{years} år och {months} månader";
+                                                    }
+
+                                                    <span>@total</span>
+                                                }
+                                            </span>
+
+                                        </span>
+                                    </div> <!-- cd-timeline-content -->
+                                </div>
+                                <!-- cd-timeline-block -->
+                            }
+
+                            <div class="cd-timeline-block">
+                                <div class="cd-timeline-img cd-movie">
+                                    <img src="~/Static/Content/img/fa-graduation-cap.svg" alt="Movie">
+                                </div> <!-- cd-timeline-img -->
+                                <div class="cd-timeline-content">
+                                    <h2>Education example</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+                                    <a href="#0" class="cd-read-more">Read more</a>
+                                    <span class="cd-date">Jan 18</span>
+                                </div> <!-- cd-timeline-content -->
+                            </div> <!-- cd-timeline-block -->
 
 
-
-<!-- timeline -->
-@*<section class="timeline">
-        <!-- timeline item -->
-        @for (int i = 0; i < Model.WorkPlaces.Count(); i++)
-        {
-            <div class="timeline-item">
-                <div class="item-badge"><span class="fa fa-dot-circle-o fa-2x"></span></div>
-                <div class="item-content">
-                    <h2></h2>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        }
-
-    </section>*@
+                            <div class="cd-timeline-block">
+                                <div class="cd-timeline-img cd-picture">
+                                    <img src="~/Static/Content/img/fa-cubes.svg" alt="Picture">
+                                </div> <!-- cd-timeline-img -->
+                                <div class="cd-timeline-content">
+                                    <h2>Project example</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+                                    <a href="#0" class="cd-read-more">Read more</a>
+                                    <span class="cd-date">Jan 24</span>
+                                </div> <!-- cd-timeline-content -->
+                            </div> <!-- cd-timeline-block -->
 
 
-    <!-- timeline item template -->
-@*<div class="timeline-item hidden">
-    <div class="item-badge"><span class="fa fa-dot-circle-o fa-2x"></span></div>
-    <div class="item-content">
-        <h2></h2>
-        <p>
+                            <div class="cd-timeline-block">
+                                <div class="cd-timeline-img cd-location">
+                                    <img src="~/Static/Content/img/fa-language.svg" alt="Location">
+                                </div> <!-- cd-timeline-img -->
+                                <div class="cd-timeline-content">
+                                    <h2>Language example</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+                                    <a href="#0" class="cd-read-more">Read more</a>
+                                    <span class="cd-date">Feb 14</span>
+                                </div> <!-- cd-timeline-content -->
+                            </div> <!-- cd-timeline-block -->
 
-        </p>
-    </div>
-</div>*@
-    <!-- end timeline item template -->
+
+                            <div class="cd-timeline-block">
+                                <div class="cd-timeline-img cd-location">
+                                    <img src="~/Static/Content/img/fa-book.svg" alt="Location">
+                                </div> <!-- cd-timeline-img -->
+                                <div class="cd-timeline-content">
+                                    <h2>Course example</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+                                    <a href="#0" class="cd-read-more">Read more</a>
+                                    <span class="cd-date">Feb 18</span>
+                                </div> <!-- cd-timeline-content -->
+                            </div> <!-- cd-timeline-block -->*@
+
+
+                        <!-- timeline -->
+                        @*<section class="timeline">
+                                <!-- timeline item -->
+                                @for (int i = 0; i < Model.WorkPlaces.Count(); i++)
+                                {
+                                    <div class="timeline-item">
+                                        <div class="item-badge"><span class="fa fa-dot-circle-o fa-2x"></span></div>
+                                        <div class="item-content">
+                                            <h2></h2>
+                                            <p>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+
+                            </section>*@
+
+
+                        <!-- timeline item template -->
+                        @*<div class="timeline-item hidden">
+                                <div class="item-badge"><span class="fa fa-dot-circle-o fa-2x"></span></div>
+                                <div class="item-content">
+                                    <h2></h2>
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div>*@
+                        <!-- end timeline item template -->
