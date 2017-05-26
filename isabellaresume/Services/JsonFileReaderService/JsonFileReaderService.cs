@@ -122,7 +122,21 @@ namespace isabellaresume.Services.JsonFileReaderService
         private static string GetFilePath(string fileName)
         //todo hämta path automatiskt
         {
-            return $"C:/Users/Isabella/Source/Repos/isabellaresume/isabellaresume/JsonFiles/Swedish/{fileName}.json";
+            fileName = fileName + ".json";
+            string filePath;
+
+            try
+            {
+                filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName, "isabellaresume", "JsonFiles", "Swedish", fileName);
+
+                return filePath;
+            }
+            catch (Exception)
+            {
+                filePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath.Replace("isabellaresume", "isabellaresume"), "JsonFiles", "Swedish", fileName);
+
+                return filePath;
+            }
         }
     }
 }

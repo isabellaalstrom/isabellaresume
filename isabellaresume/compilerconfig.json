@@ -1,6 +1,6 @@
-﻿[
+[
   {
-    "outputFile": "Static/css/main.css",
-    "inputFile": "Static/sass/main.scss"
+    "inputFile": "Static/sass/main.scss",
+    "outputFile": "Static/css/main.css"
   }
 ]

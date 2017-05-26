@@ -139,25 +139,24 @@
     <Compile Include="Services\JsonFileReaderService\IJsonFileReaderService.cs" />
     <Compile Include="Services\JsonFileReaderService\JsonFileReaderService.cs" />
     <Compile Include="Models\EducationModel.cs" />
-    <Compile Include="Services\stefanjson.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Static\Content\bootstrap.css" />
-    <Content Include="Static\Content\bootstrap.min.css" />
+    <Content Include="Static\Content\img\cd-icon-location.svg" />
+    <Content Include="Static\Content\img\cd-icon-movie.svg" />
+    <Content Include="Static\Content\img\cd-icon-picture.svg" />
+    <Content Include="Static\Scripts\timeline.js" />
+    <Content Include="Static\css\bootstrap.css" />
+    <Content Include="Static\css\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Static\css\font-awesome.css" />
+    <Content Include="Static\css\font-awesome.min.css" />
     <Content Include="Static\css\main.css" />
     <Content Include="Static\css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <Content Include="Static\fonts\fontawesome-webfont.svg" />
     <Content Include="Static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Static\Content\Site.css" />
-    <Content Include="Static\sass\main.css">
-      <DependentUpon>main.scss</DependentUpon>
-    </Content>
-    <Content Include="Static\sass\main.min.css">
-      <DependentUpon>main.css</DependentUpon>
-    </Content>
     <Content Include="Static\Scripts\bootstrap.js" />
     <Content Include="Static\Scripts\bootstrap.min.js" />
     <Content Include="JsonFiles\Swedish\educations.json" />
@@ -166,12 +165,75 @@
     <Content Include="JsonFiles\Swedish\courses.json" />
     <Content Include="JsonFiles\Swedish\projects.json" />
     <Content Include="Static\sass\main.scss" />
+    <Content Include="bower_components\bourbon\.bower.json" />
+    <Content Include="bower_components\bourbon\bower.json" />
+    <Content Include="bower_components\bourbon\CHANGELOG.md" />
+    <Content Include="bower_components\bourbon\CONTRIBUTING.md" />
+    <Content Include="bower_components\bourbon\core\bourbon\helpers\_buttons-list.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\helpers\_scales.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\helpers\_text-inputs-list.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_border-color.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_border-radius.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_border-style.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_border-width.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_buttons.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_clearfix.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_contrast-switch.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_ellipsis.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_font-face.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_font-stacks.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_hide-text.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_hide-visually.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_margin.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_modular-scale.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_overflow-wrap.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_padding.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_position.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_prefixer.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_shade.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_size.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_strip-unit.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_text-inputs.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_timing-functions.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_tint.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_triangle.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\library\_value-prefixer.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\settings\_settings.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_assign-inputs.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_compact-shorthand.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_contrast-ratio.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_directional-property.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_fetch-bourbon-setting.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_font-source-declaration.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_gamma.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_lightness.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\utilities\_unpack-shorthand.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\validators\_contains-falsy.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\validators\_contains.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\validators\_is-color.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\validators\_is-length.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\validators\_is-number.scss" />
+    <Content Include="bower_components\bourbon\core\bourbon\validators\_is-size.scss" />
+    <Content Include="bower_components\bourbon\core\_bourbon.scss" />
+    <Content Include="bower_components\bourbon\LICENSE.md" />
+    <Content Include="bower_components\bourbon\README.md" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Static\sass\variables.scss" />
-    <Content Include="Static\sass\timeline.scss" />
+    <Content Include="Static\sass\timeline2.scss" />
+    <Content Include="Static\fonts\fontawesome-webfont.eot" />
+    <Content Include="Static\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Static\fonts\fontawesome-webfont.woff" />
+    <Content Include="Static\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Static\fonts\FontAwesome.otf" />
+    <Content Include="Static\sass\custom.scss" />
+    <Content Include="Static\Content\img\.DS_Store" />
+    <Content Include="Static\sass\style.scss" />
+    <Content Include="Static\sass\partials\_layout.scss" />
+    <Content Include="Static\sass\partials\_mixins.scss" />
+    <Content Include="Static\sass\partials\_variables.scss" />
     <None Include="Static\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.min.js" />

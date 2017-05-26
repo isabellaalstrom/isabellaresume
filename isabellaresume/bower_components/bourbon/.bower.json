@@ -1,0 +1,49 @@
+{
+  "authors": [
+    "thoughtbot (http://thoughtbot.com)"
+  ],
+  "description": "A lightweight Sass tool set.",
+  "homepage": "http://bourbon.io",
+  "ignore": [
+    "**/.*",
+    "_site/",
+    "bin/",
+    "bourbon.gemspec",
+    "circle.yml",
+    "eyeglass-exports.js",
+    "features/",
+    "Gemfile",
+    "Gemfile.lock",
+    "index.js",
+    "lib/",
+    "package.json",
+    "pkg/",
+    "Rakefile",
+    "RELEASING.md",
+    "spec/"
+  ],
+  "keywords": [
+    "css",
+    "mixins",
+    "sass",
+    "scss"
+  ],
+  "license": "MIT",
+  "main": "core/_bourbon.scss",
+  "name": "bourbon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thoughtbot/bourbon.git"
+  },
+  "version": "4.2.7",
+  "_release": "4.2.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.2.7",
+    "commit": "ae8391d1a83b6e4211902cd6b8f8b30d43d2f3d6"
+  },
+  "_source": "https://github.com/thoughtbot/bourbon.git",
+  "_target": "4.2.7",
+  "_originalSource": "bourbon",
+  "_direct": true
+}

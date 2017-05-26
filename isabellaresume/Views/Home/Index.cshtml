@@ -1,56 +1,103 @@
 ﻿@model isabellaresume.Models.ViewModels.IndexViewModel
 
-<h1>Educations</h1>
-<table class="table-striped table-responsive table">
-    @foreach (var education in Model.Educations)
-{
-    <tr>
-        <td>@education.SchoolName</td>
-        <td>@education.FieldOfStudy</td>
-    </tr>
-}
-</table>
 
-<h1>Workplaces</h1>
-<table class="table-striped table-responsive table">
-    @foreach (var workplace in Model.WorkPlaces)
-    {
-        <tr>
-            <td>@workplace.CompanyName</td>
-            <td>@workplace.Position</td>
-        </tr>
-    }
-</table>
+<section id="cd-timeline" class="cd-container">
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+            <img src="~/Static/Content/img/cd-icon-picture.svg" alt="Picture"/>
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content">
+            <h2>Title of section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <a href="#0" class="cd-read-more">Read more</a>
+            <span class="cd-date">Jan 14</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="~/Static/Content/img/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content">
+            <h2>Title of section 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+            <a href="#0" class="cd-read-more">Read more</a>
+            <span class="cd-date">Jan 18</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+            <img src="~/Static/Content/img/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content">
+            <h2>Title of section 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+            <a href="#0" class="cd-read-more">Read more</a>
+            <span class="cd-date">Jan 24</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+            <img src="~/Static/Content/img/cd-icon-location.svg" alt="Location">
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content">
+            <h2>Title of section 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <a href="#0" class="cd-read-more">Read more</a>
+            <span class="cd-date">Feb 14</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+            <img src="~/Static/Content/img/cd-icon-location.svg" alt="Location">
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content">
+            <h2>Title of section 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+            <a href="#0" class="cd-read-more">Read more</a>
+            <span class="cd-date">Feb 18</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+            <img src="~/Static/Content/img/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content">
+            <h2>Final Section</h2>
+            <p>This is the content of the last section</p>
+            <span class="cd-date">Feb 26</span>
+        </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+</section> <!-- cd-timeline -->
 
-<h1>Courses</h1>
-<table class="table-striped table-responsive table">
-    @foreach (var course in Model.Courses)
-    {
-        <tr>
-            <td>@course.CourseName</td>
-            <td>@course.Description</td>
-        </tr>
-    }
-</table>
 
-<h1>Projects</h1>
-<table class="table-striped table-responsive table">
-    @foreach (var project in Model.Projects)
-    {
-        <tr>
-            <td>@project.ProjectName</td>
-            <td>@project.Description</td>
-        </tr>
-    }
-</table>
 
-<h1>Languages</h1>
-<table class="table-striped table-responsive table">
-    @foreach (var language in Model.Languages)
-    {
-        <tr>
-            <td>@language.LanguageName</td>
-            <td>@language.Proficiency</td>
-        </tr>
-    }
-</table>
+<!-- timeline -->
+@*<section class="timeline">
+        <!-- timeline item -->
+        @for (int i = 0; i < Model.WorkPlaces.Count(); i++)
+        {
+            <div class="timeline-item">
+                <div class="item-badge"><span class="fa fa-dot-circle-o fa-2x"></span></div>
+                <div class="item-content">
+                    <h2></h2>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        }
+
+    </section>*@
+
+
+    <!-- timeline item template -->
+@*<div class="timeline-item hidden">
+    <div class="item-badge"><span class="fa fa-dot-circle-o fa-2x"></span></div>
+    <div class="item-content">
+        <h2></h2>
+        <p>
+
+        </p>
+    </div>
+</div>*@
+    <!-- end timeline item template -->
