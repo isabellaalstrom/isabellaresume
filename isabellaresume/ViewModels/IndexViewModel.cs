@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using isabellaresume.Entities;
-using isabellaresume.Services.JsonFileReaderService.Models;
 
 namespace isabellaresume.Models.ViewModels
 {
@@ -11,6 +10,9 @@ namespace isabellaresume.Models.ViewModels
     {
         public IEnumerable<EducationItem> Educations { get; set; }
         public IEnumerable<WorkPlaceItem> WorkPlaces { get; set; }
-        //todo ladda in all info från alla andra klasser i listor
+        public IEnumerable<CourseItem> Courses{ get; set; }
+        public IEnumerable<ProjectItem> Projects { get; set; }
+        public IEnumerable<LanguageItem> Languages { get; set; }
+        //todo skills
     }
 }

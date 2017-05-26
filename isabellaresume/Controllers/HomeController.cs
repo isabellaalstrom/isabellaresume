@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using isabellaresume.Entities;
+using isabellaresume.Models;
 using isabellaresume.Models.ViewModels;
 using isabellaresume.Services.JsonFileReaderService;
-using isabellaresume.Services.JsonFileReaderService.Models;
 using Newtonsoft.Json;
 
 namespace isabellaresume.Controllers
@@ -21,25 +21,30 @@ namespace isabellaresume.Controllers
         public HomeController()
         {
             _context = new Context();
-            ReadEducations();
-            ReadWorkplaces();
-            //_fileReaderService = new JsonFileReaderService();
-            //_context = _fileReaderService.ReadJsonFiles(_context);
+            _fileReaderService = new JsonFileReaderService();
+            _context = _fileReaderService.ReadJsonFiles(_context);
 
         }
         public ActionResult Index()
         {
-            var viewModel = new IndexViewModel()
-            {
-                Educations = TransformEducations(),
-                WorkPlaces = TransformWorkplaces()
-                
-            };
+            var viewModel = PopulateViewModel();
 
             return View(viewModel);
         }
 
-        private IEnumerable<WorkPlaceItem> TransformWorkplaces()
+        private static IndexViewModel PopulateViewModel()
+        {
+            return new IndexViewModel()
+            {
+                Educations = TransformEducations(),
+                WorkPlaces = TransformWorkplaces(),
+                Projects = TransformProjects(),
+                Courses = TransformCourses(),
+                Languages = TransformLanguages()
+            };
+        }
+
+        private static IEnumerable<WorkPlaceItem> TransformWorkplaces()
         {
             return _context.Workplaces.Select(s => new WorkPlaceItem()
             {
@@ -53,21 +58,7 @@ namespace isabellaresume.Controllers
             });
         }
 
-        //public ActionResult About()
-        //{
-        //    ViewBag.Message = "Your application description page.";
-
-        //    return View();
-        //}
-
-        //public ActionResult Contact()
-        //{
-        //    ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
-
-        IEnumerable<EducationItem> TransformEducations()
+        private static IEnumerable<EducationItem> TransformEducations()
         {
             return _context.Educations.Select(s => new EducationItem
             {
@@ -80,48 +71,40 @@ namespace isabellaresume.Controllers
                 SchoolName = s.SchoolName
             });
         }
-
-        private void ReadEducations()
+        private static IEnumerable<LanguageItem> TransformLanguages()
         {
-            try
+            return _context.Languages.Select(s => new LanguageItem()
             {
-                var filePath = GetFilePath("educations");
-
-                using (StreamReader r = new StreamReader(filePath))
-                {
-                    string json = r.ReadToEnd();
-                    _context.Educations = JsonConvert.DeserializeObject<List<Education>>(json);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+                LanguageName = s.LanguageName,
+                Proficiency = s.Proficiency
+            });
         }
 
-        public void ReadWorkplaces()
+        private static IEnumerable<CourseItem> TransformCourses()
         {
-            try
+            return _context.Courses.Select(s => new CourseItem()
             {
-                var filePath = GetFilePath("workplaces");
-
-                using (StreamReader r = new StreamReader(filePath))
-                {
-                    string json = r.ReadToEnd();
-                    _context.Workplaces = JsonConvert.DeserializeObject<List<Workplace>>(json);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+                End = s.End,
+                Start = s.Start,
+                Description = s.Description,
+                AssociatedEducation = s.AssociatedEducation,
+                AssociatedWorkplace = s.AssociatedWorkplace,
+                CourseName = s.CourseName
+            });
         }
-        private static string GetFilePath(string fileName)
-        //todo GetFilePath() som hämtar path
+
+        private static IEnumerable<ProjectItem> TransformProjects()
         {
-            return $"C:/Users/Isabella/Source/Repos/isabellaresume/isabellaresume/JsonFiles/Swedish/{fileName}.json";
+            return _context.Projects.Select(s => new ProjectItem()
+            {
+                End = s.End,
+                Start = s.Start,
+                Description = s.Description,
+                AssociatedEducation = s.AssociatedEducation,
+                AssociatedWorkplace = s.AssociatedWorkplace,
+                Ongoing = s.Ongoing,
+                ProjectName = s.ProjectName
+            });
         }
     }
 }

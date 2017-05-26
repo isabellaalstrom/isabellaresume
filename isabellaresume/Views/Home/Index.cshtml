@@ -1,6 +1,6 @@
 ﻿@model isabellaresume.Models.ViewModels.IndexViewModel
 
-<h1>My Educations</h1>
+<h1>Educations</h1>
 <table class="table-striped table-responsive table">
     @foreach (var education in Model.Educations)
 {
@@ -11,13 +11,46 @@
 }
 </table>
 
-<h1>My Workplaces</h1>
+<h1>Workplaces</h1>
 <table class="table-striped table-responsive table">
     @foreach (var workplace in Model.WorkPlaces)
     {
         <tr>
             <td>@workplace.CompanyName</td>
             <td>@workplace.Position</td>
+        </tr>
+    }
+</table>
+
+<h1>Courses</h1>
+<table class="table-striped table-responsive table">
+    @foreach (var course in Model.Courses)
+    {
+        <tr>
+            <td>@course.CourseName</td>
+            <td>@course.Description</td>
+        </tr>
+    }
+</table>
+
+<h1>Projects</h1>
+<table class="table-striped table-responsive table">
+    @foreach (var project in Model.Projects)
+    {
+        <tr>
+            <td>@project.ProjectName</td>
+            <td>@project.Description</td>
+        </tr>
+    }
+</table>
+
+<h1>Languages</h1>
+<table class="table-striped table-responsive table">
+    @foreach (var language in Model.Languages)
+    {
+        <tr>
+            <td>@language.LanguageName</td>
+            <td>@language.Proficiency</td>
         </tr>
     }
 </table>

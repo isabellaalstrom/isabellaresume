@@ -129,22 +129,35 @@
     <Compile Include="Entities\Education.cs" />
     <Compile Include="Entities\Language.cs" />
     <Compile Include="Entities\Project.cs" />
-    <Compile Include="Services\JsonFileReaderService\Models\WorkPlaceModel.cs" />
+    <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\WorkPlaceModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="Entities\Workplace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\JsonFileReaderService\IJsonFileReaderService.cs" />
     <Compile Include="Services\JsonFileReaderService\JsonFileReaderService.cs" />
-    <Compile Include="Services\JsonFileReaderService\Models\EducationModel.cs" />
+    <Compile Include="Models\EducationModel.cs" />
     <Compile Include="Services\stefanjson.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Static\Content\bootstrap.css" />
     <Content Include="Static\Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Static\css\main.css" />
+    <Content Include="Static\css\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="Static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Static\Content\Site.css" />
+    <Content Include="Static\sass\main.css">
+      <DependentUpon>main.scss</DependentUpon>
+    </Content>
+    <Content Include="Static\sass\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="Static\Scripts\bootstrap.js" />
     <Content Include="Static\Scripts\bootstrap.min.js" />
     <Content Include="JsonFiles\Swedish\educations.json" />
@@ -152,6 +165,13 @@
     <Content Include="JsonFiles\Swedish\languages.json" />
     <Content Include="JsonFiles\Swedish\courses.json" />
     <Content Include="JsonFiles\Swedish\projects.json" />
+    <Content Include="Static\sass\main.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Static\sass\variables.scss" />
+    <Content Include="Static\sass\timeline.scss" />
     <None Include="Static\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.js" />
     <Content Include="Static\Scripts\jquery-1.10.2.min.js" />
