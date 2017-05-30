@@ -1,4 +1,6 @@
-﻿html {
+﻿/*font-family: 'Playfair Display', serif;
+font-family: 'Raleway', sans-serif;*/
+html {
   height: 100%; }
 
 body {
@@ -26,6 +28,8 @@ textarea {
   background-color: white;
   border: none; }
 
+/*font-family: 'Playfair Display', serif;
+font-family: 'Raleway', sans-serif;*/
 /* -------------------------------- 
 
 Primary style
@@ -40,20 +44,20 @@ html * {
 
 body {
   font-size: 100%;
-  font-family: "Droid Serif", serif;
+  font-family: "Raleway", sans-serif;
   color: #7f8c97;
   background-color: #e9f0f5; }
 
 a {
   color: #acb7c0;
   text-decoration: none;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Playfair Display", serif; }
 
 img {
   max-width: 100%; }
 
 h1, h2 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Playfair Display", serif;
   font-weight: bold;
   margin-top: 10px; }
 
@@ -65,7 +69,8 @@ Modules - reusable parts of our design
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
-  max-width: 1170px;
+  max-width: 1140px;
+  min-width: 1140px;
   margin: 0 auto; }
   .cd-container::after {
     /* clearfix */
@@ -87,7 +92,7 @@ header {
     color: #ffffff;
     font-size: 18px;
     font-size: 1.125rem; }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 1140px) {
     header {
       height: 300px;
       line-height: 300px; }
@@ -97,7 +102,7 @@ header {
 
 #cd-timeline {
   position: relative;
-  padding: 2em 0;
+  padding: 4em 0 2em 0;
   margin-top: 2em;
   margin-bottom: 2em; }
   #cd-timeline::before {
@@ -109,7 +114,7 @@ header {
     height: 100%;
     width: 4px;
     background: #d7e4ed; }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 1140px) {
     #cd-timeline {
       margin-top: 3em;
       margin-bottom: 3em; }
@@ -121,9 +126,11 @@ header {
   position: relative;
   margin: 2em 0; }
   .cd-timeline-block.course-block {
-    margin: 0; }
+    margin: 0;
+    margin-top: 20px; }
   .cd-timeline-block.project-block {
-    margin: 0; }
+    margin: 0;
+    margin-top: 20px; }
   .cd-timeline-block::after {
     clear: both;
     content: "";
@@ -132,7 +139,7 @@ header {
     margin-top: 0; }
   .cd-timeline-block:last-child {
     margin-bottom: 0; }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 1140px) {
     .cd-timeline-block {
       margin: 4em 0; }
       .cd-timeline-block:first-child {
@@ -171,7 +178,7 @@ header {
     height: 40px;
     margin-left: -20px;
     background: #f0ca45; }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 1140px) {
     .cd-timeline-img {
       width: 60px;
       height: 60px;
@@ -251,7 +258,7 @@ header {
     .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
       font-size: 14px;
       font-size: 0.875rem; } }
-  @media only screen and (min-width: 1170px) {
+  @media only screen and (min-width: 1140px) {
     .cd-timeline-content {
       margin-left: 0;
       padding: 1.6em;
@@ -290,59 +297,69 @@ header {
         visibility: visible;
         /*@include animation(cd-bounce-2 .6s);*/ } }
 
+/*font-family: 'Playfair Display', serif;
+font-family: 'Raleway', sans-serif;*/
 /*
 Ref:
 Thanks to:
 http://span-tag.com/bootstrap-navbar/
 */
-.nav li {
-  /*position: absolute;*/
-  /*top: 0;
-        left: 0;*/ }
-  .nav li .img-wrapper {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-    padding: 1px; }
-    .nav li .img-wrapper img {
-      display: block;
-      width: 24px;
-      height: 24px;
-      position: relative;
-      left: 50%;
-      top: 50%;
-      margin-left: -12px;
-      margin-top: -12px; }
-    .nav li .img-wrapper.workplace {
-      background: #75ce66; }
-    .nav li .img-wrapper.education {
-      background: #454ef7; }
-    .nav li .img-wrapper.project {
+.navbar-collapse .navbar-nav.navbar-right {
+  padding-top: 0; }
+
+.nav {
+  margin-left: 50px; }
+  .nav li {
+    margin-left: 20px;
+    margin-top: 2px; }
+    .nav li .img-wrapper {
       width: 40px;
       height: 40px;
-      margin-left: -20px;
-      background: #303e49; }
-    .nav li .img-wrapper.course {
-      width: 40px;
-      height: 40px;
-      margin-left: -20px;
-      background: #f0ca45; }
-  .nav li a {
-    display: inline-block; }
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+      padding: 1px; }
+      .nav li .img-wrapper img {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        margin-left: -12px;
+        margin-top: -12px; }
+      .nav li .img-wrapper.workplace {
+        background: #75ce66; }
+      .nav li .img-wrapper.education {
+        background: #454ef7; }
+      .nav li .img-wrapper.project {
+        width: 40px;
+        height: 40px;
+        background: #303e49; }
+      .nav li .img-wrapper.course {
+        width: 40px;
+        height: 40px;
+        background: #f0ca45; }
+      .nav li .img-wrapper.times {
+        margin-top: 5px;
+        margin-left: 40px;
+        width: 30px;
+        height: 30px;
+        background: red; }
+    .nav li a {
+      display: inline-block; }
 
 /* added to  .nav */
 .normal {
-  height: 75px;
+  height: 100px;
   /* this causes drop down to lose color ??? */
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   transition: 0.5s;
-  padding-top: 12px; }
+  padding-top: 25px; }
 
 .normal .navbar-right {
-  padding-top: 12px;
+  padding-top: 25px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
@@ -360,12 +377,13 @@ max-height: 75px;
 transition: 0.5s;
 }*/
 .shrink {
-  height: 50px;
+  height: 60px;
   padding-top: 0px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
-  transition: 0.5s; }
+  transition: 0.5s;
+  padding-top: 5px; }
 
 /*.shrink .navbar-right {
 padding-top: 0px;

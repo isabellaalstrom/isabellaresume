@@ -6,10 +6,13 @@
 
     @for (int i = 0; i < Model.TimelineItems.Count(); i++)
     {
-        <div class="cd-timeline-block">
-            <div class="cd-timeline-img cd-@Model.TimelineItems.ElementAt(i).Type">
-                @{ var imageName = Model.TimelineItems.ElementAt(i).Type + ".svg"; }
-                <img src="~/Static/Content/img/@imageName" alt="Picture" />
+        <div class="cd-timeline-block @Model.TimelineItems.ElementAt(i).Type-block">
+            @{
+                var imageName = Model.TimelineItems.ElementAt(i).Type + ".svg";
+                var tooltipTitle = Model.TimelineItems.ElementAt(i).Type.ToString() == "education" ? "Utbildning" : "Arbete";
+            }
+            <div class="cd-timeline-img cd-@Model.TimelineItems.ElementAt(i).Type"  data-toggle="tooltip" data-placement="top" title="@tooltipTitle">
+                <img src="~/Static/Content/img/@imageName" alt="Picture"/>
             </div> <!-- cd-timeline-img -->
             <div class="cd-timeline-content">
                 <p>@Model.TimelineItems.ElementAt(i).Location</p>
@@ -30,7 +33,7 @@
                     {
                         @Model.TimelineItems.ElementAt(i).EndDate.ToString("yyyy MMM")
                     }
-                    <br />
+                    <br/>
                     <span>@Html.GetTotalTime(Model.TimelineItems.ElementAt(i).StartDate, Model.TimelineItems.ElementAt(i).EndDate)</span>
 
                 </span><!-- cd-date -->
@@ -42,7 +45,7 @@
                                 {
 
                                     <div class="cd-timeline-block course-block">
-                                        <div class="cd-timeline-img cd-course">
+                                        <div class="cd-timeline-img cd-course" data-toggle="tooltip" data-placement="top" title="Kurs">
                                             <img src="~/Static/Content/img/course.svg" alt="Course">
                                         </div> <!-- cd-timeline-img -->
                                         <div class="cd-timeline-content course-content">
@@ -60,8 +63,8 @@
                         foreach (var project in @Model.TimelineItems.ElementAt(i).Projects)
                         {
 
-                            <div class="cd-timeline-block course-block">
-                                <div class="cd-timeline-img cd-project">
+                            <div class="cd-timeline-block project-block">
+                                <div class="cd-timeline-img cd-project" data-toggle="tooltip" data-placement="top" title="Projekt">
                                     <img src="~/Static/Content/img/project.svg" alt="Project">
                                 </div> <!-- cd-timeline-img -->
                                 <div class="cd-timeline-content course-content">

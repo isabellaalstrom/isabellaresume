@@ -6,3 +6,4 @@
         $('.navbar').removeClass('shrink');
     }
 });
+$('[data-toggle="tooltip"]').tooltip();

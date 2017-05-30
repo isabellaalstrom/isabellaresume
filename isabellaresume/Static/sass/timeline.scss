@@ -53,6 +53,7 @@ Modules - reusable parts of our design
 .cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
     width: 90%;
     max-width: $L; // breakpoints inside partials > _layout.scss
+    min-width: $L;
     margin: 0 auto;
 
     &::after { /* clearfix */
@@ -91,7 +92,7 @@ header {
 
 #cd-timeline {
     position: relative;
-    padding: 2em 0;
+    padding: 4em 0 2em 0;
 
     margin: {
         top: 2em;
@@ -128,10 +129,12 @@ header {
 
     &.course-block {
         margin: 0;
+        margin-top: 20px;
     }
 
     &.project-block {
         margin: 0;
+        margin-top: 20px;
     }
 
     @include clearfix;

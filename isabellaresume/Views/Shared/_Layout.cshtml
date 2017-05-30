@@ -6,28 +6,43 @@
     <title>Under utveckling - Isabella Gross Alström</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top normal" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Isabella Gross Alström", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    <li><div class="img-wrapper education"><img src="~/Static/Content/img/education.svg" /></div>@Html.ActionLink("Utbildning", "Education", "Home")</li>
-                    <li><div class="img-wrapper workplace"><img src="~/Static/Content/img/workplace.svg" /></div>@Html.ActionLink("Arbetslivserfarenhet", "Workplace", "Home")</li>
-                    <li>OBS sidan är under utveckling</li>
-                </ul>
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-top normal" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Isabella Gross Alström", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
-    </nav>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="pull-left">OBS sidan är under utveckling</li>
+                @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                <li id="education">
+                    <div class="img-wrapper education" data-toggle="tooltip" data-placement="bottom" title="Utbildningar"><img src="~/Static/Content/img/education.svg"/>
+                    </div></li>
+                <li id="workplace">
+                    <div class="img-wrapper workplace" data-toggle="tooltip" data-placement="bottom" title="Arbeten"><img src="~/Static/Content/img/workplace.svg"/>
+                    </div></li>
+                <li id="project">
+                    <div class="img-wrapper project" data-toggle="tooltip" data-placement="bottom" title="Projekt"><img src="~/Static/Content/img/project.svg"/>
+                    </div></li>
+                <li id="course">
+                    <div class="img-wrapper course" data-toggle="tooltip" data-placement="bottom" title="Kurser"><img src="~/Static/Content/img/course.svg"/>
+                    </div></li>
+                <li id="times">
+                    <div class="img-wrapper times" data-toggle="tooltip" data-placement="bottom" title="Ta bort filter"><img src="~/Static/Content/img/times.svg"/>
+                    </div></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="container body-content">
     @RenderBody()
 </div>

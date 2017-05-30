@@ -141,6 +141,7 @@
     <Content Include="Static\Content\img\cd-icon-movie.svg" />
     <Content Include="Static\Content\img\cd-icon-picture.svg" />
     <Content Include="Static\Content\img\course.svg" />
+    <Content Include="Static\Content\img\times.svg" />
     <Content Include="Static\Content\img\workplace.svg" />
     <Content Include="Static\Content\img\project.svg" />
     <Content Include="Static\Content\img\education.svg" />

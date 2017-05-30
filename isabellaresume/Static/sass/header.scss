@@ -5,18 +5,25 @@ Thanks to:
 http://span-tag.com/bootstrap-navbar/
 */
 
+.navbar-collapse {
+    .navbar-nav.navbar-right {
+        padding-top: 0;
+    }
+}
 
 .nav {
+    margin-left: 50px;
     li {
-        /*position: absolute;*/
-        /*top: 0;
-        left: 0;*/
+        margin-left: 20px;
+        margin-top: 2px;
+
         .img-wrapper {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
             padding: 1px;
+
             img {
                 display: block;
                 width: 24px;
@@ -39,34 +46,41 @@ http://span-tag.com/bootstrap-navbar/
             &.project {
                 width: 40px;
                 height: 40px;
-                margin-left: -20px;
                 background: $color-1;
             }
 
             &.course {
                 width: 40px;
                 height: 40px;
-                margin-left: -20px;
                 background: $color-5;
             }
+
+            &.times {
+                margin-top: 5px;
+                margin-left: 40px;
+                width: 30px;
+                height: 30px;
+                background: red;
+            }
         }
-        a{
+
+        a {
             display: inline-block;
         }
     }
 }
 /* added to  .nav */
 .normal {
-    height: 75px; /* this causes drop down to lose color ??? */
+    height: 100px; /* this causes drop down to lose color ??? */
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     transition: 0.5s;
-    padding-top: 12px;
+    padding-top: 25px;
 }
 
 .normal .navbar-right {
-    padding-top: 12px;
+    padding-top: 25px;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
@@ -84,12 +98,13 @@ max-height: 75px;
 transition: 0.5s;
 }*/
 .shrink {
-    height: 50px;
+    height: 60px;
     padding-top: 0px;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     transition: 0.5s;
+    padding-top: 5px;   
 }
 /*.shrink .navbar-right {
 padding-top: 0px;
