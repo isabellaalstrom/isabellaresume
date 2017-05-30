@@ -53,6 +53,10 @@ a {
   text-decoration: none;
   font-family: "Playfair Display", serif; }
 
+p {
+  font-size: 20px;
+  font-size: 1.25rem; }
+
 img {
   max-width: 100%; }
 
@@ -205,8 +209,6 @@ header {
     content: "";
     display: block; }
   .cd-timeline-content.course-content {
-    /*padding-bottom: 5px;
-        padding-top: 5px;*/
     width: 30%;
     margin-left: 150px;
     margin-right: 150px; }
@@ -220,13 +222,15 @@ header {
   .cd-timeline-content h2 {
     color: #303e49; }
   .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 13px;
-    font-size: 0.8125rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     display: inline-block; }
   .cd-timeline-content p {
     margin: 0;
-    line-height: 1.6; }
+    line-height: 1.6;
+    font-size: 20px;
+    font-size: 1.25rem; }
   .cd-timeline-content .cd-read-more {
     float: right;
     padding: .8em 1em;
@@ -250,14 +254,14 @@ header {
     border-right: 7px solid #ffffff; }
   @media only screen and (min-width: 768px) {
     .cd-timeline-content h2 {
+      font-size: 30px;
+      font-size: 1.875rem; }
+    .cd-timeline-content p {
       font-size: 20px;
       font-size: 1.25rem; }
-    .cd-timeline-content p {
-      font-size: 16px;
-      font-size: 1rem; }
     .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-      font-size: 14px;
-      font-size: 0.875rem; } }
+      font-size: 20px;
+      font-size: 1.25rem; } }
   @media only screen and (min-width: 1140px) {
     .cd-timeline-content {
       margin-left: 0;
@@ -365,17 +369,14 @@ http://span-tag.com/bootstrap-navbar/
   -ms-transition: 0.5s;
   transition: 0.5s; }
 
-/*.navbar-brand {
-padding: 0px !important;
-}
-.navbar-brand img {
-padding: 5px;
-max-height: 75px;
--webkit-transition: 0.5s;
--moz-transition: 0.5s;
--ms-transition: 0.5s;
-transition: 0.5s;
-}*/
+.navbar-title img {
+  padding: 5px;
+  max-height: 75px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s; }
+
 .shrink {
   height: 60px;
   padding-top: 0px;

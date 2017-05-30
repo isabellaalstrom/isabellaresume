@@ -34,6 +34,10 @@ a {
     font-family: $secondary-font;
 }
 
+p {
+    @include font-size(20px);
+}
+
 img {
     max-width: 100%;
 }
@@ -232,8 +236,6 @@ header {
     @include clearfix;
 
     &.course-content {
-        /*padding-bottom: 5px;
-        padding-top: 5px;*/
         width: 30%;
         margin-left: 150px;
         margin-right: 150px;
@@ -255,7 +257,7 @@ header {
     }
 
     p, .cd-read-more, .cd-date {
-        @include font-size(13px);
+        @include font-size(20px);
     }
 
     .cd-read-more, .cd-date {
@@ -265,6 +267,7 @@ header {
     p {
         margin: 0;
         line-height: 1.6;
+        @include font-size(20px);
     }
 
     .cd-read-more {
@@ -298,15 +301,15 @@ header {
 
     @include MQ(M) {
         h2 {
-            @include font-size(20px);
+            @include font-size(30px);
         }
 
         p {
-            @include font-size(16px);
+            @include font-size(20px);
         }
 
         .cd-read-more, .cd-date {
-            @include font-size(14px);
+            @include font-size(20px);
         }
     }
 
