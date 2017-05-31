@@ -11,8 +11,19 @@ http://span-tag.com/bootstrap-navbar/
     }
 }
 
+.navbar {
+    h2 {
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 .nav {
     margin-left: 50px;
+
     li {
         margin-left: 20px;
         margin-top: 2px;
@@ -21,7 +32,7 @@ http://span-tag.com/bootstrap-navbar/
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
+            box-shadow: 0 0 0 4px $white, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
             padding: 1px;
 
             img {
@@ -36,23 +47,23 @@ http://span-tag.com/bootstrap-navbar/
             }
 
             &.workplace {
-                background: $color-4;
+                background: $green;
             }
 
             &.education {
-                background: $color-6;
+                background: $blue;
             }
 
             &.project {
                 width: 40px;
                 height: 40px;
-                background: $color-1;
+                background: $dark-blue;
             }
 
             &.course {
                 width: 40px;
                 height: 40px;
-                background: $color-5;
+                background: $yellow;
             }
 
             &.times {
@@ -60,12 +71,16 @@ http://span-tag.com/bootstrap-navbar/
                 margin-left: 40px;
                 width: 30px;
                 height: 30px;
-                background: red;
+                background: $red;
             }
         }
 
         a {
             display: inline-block;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
@@ -86,16 +101,19 @@ http://span-tag.com/bootstrap-navbar/
     -ms-transition: 0.5s;
     transition: 0.5s;
 }
+
 .navbar-title {
 }
+
 .navbar-title img {
-padding: 5px;
-max-height: 75px;
--webkit-transition: 0.5s;
--moz-transition: 0.5s;
--ms-transition: 0.5s;
-transition: 0.5s;
+    padding: 5px;
+    max-height: 75px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
+
 .shrink {
     height: 60px;
     padding-top: 0px;
@@ -103,7 +121,7 @@ transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     transition: 0.5s;
-    padding-top: 5px;   
+    padding-top: 5px;
 }
 /*.shrink .navbar-right {
 padding-top: 0px;

@@ -28,25 +28,13 @@ body {
     background-color: $background;
 }
 
-a {
-    color: $link;
-    text-decoration: none;
-    font-family: $secondary-font;
-}
 
-p {
-    @include font-size(20px);
-}
 
 img {
     max-width: 100%;
 }
 
-h1, h2 {
-    font-family: $secondary-font;
-    font-weight: bold;
-    margin-top: 10px;
-}
+
 
 /* -------------------------------- 
 
@@ -73,14 +61,14 @@ Main components
 
 -------------------------------- */
 
-header {
+/*header {
     height: 200px;
     line-height: 200px;
     text-align: center;
-    background: $color-1;
+    background: $dark-blue;
 
     h1 {
-        color: $color-3;
+        color: $white;
         @include font-size(18px);
     }
 
@@ -92,7 +80,7 @@ header {
             @include font-size(24px);
         }
     }
-}
+}*/
 
 #cd-timeline {
     position: relative;
@@ -101,6 +89,7 @@ header {
     margin: {
         top: 2em;
         bottom: 2em;
+        
     }
 
     &::before {
@@ -114,7 +103,7 @@ header {
         background: darken($background, 5%);
     }
 
-    @include MQ(L) {
+    @include Desktop() {
         margin: {
             top: 3em;
             bottom: 3em;
@@ -151,7 +140,7 @@ header {
         margin-bottom: 0;
     }
 
-    @include MQ(L) {
+    @include Desktop {
         margin: 4em 0;
 
         &:first-child {
@@ -171,7 +160,7 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
+    box-shadow: 0 0 0 4px $white, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
 
     img {
         display: block;
@@ -185,28 +174,28 @@ header {
     }
 
     &.cd-workplace {
-        background: $color-4;
+        background: $green;
     }
 
     &.cd-education {
-        background: $color-6;
+        background: $blue;
     }
 
     &.cd-project {
         width: 40px;
         height: 40px;
         margin-left: -20px;
-        background: $color-1;
+        background: $dark-blue;
     }
 
     &.cd-course {
         width: 40px;
         height: 40px;
         margin-left: -20px;
-        background: $color-5;
+        background: $yellow;
     }
 
-    @include MQ(L) {
+    @include Desktop {
         width: 60px;
         height: 60px;
         left: 50%;
@@ -229,7 +218,7 @@ header {
 .cd-timeline-content {
     position: relative;
     margin-left: 60px;
-    background: $color-3;
+    background: $white;
     @include border-radius;
     padding: 1em;
     box-shadow: 0 3px 0 darken($background, 5%);
@@ -253,7 +242,7 @@ header {
     }
 
     h2 {
-        color: $color-1;
+        color: $dark-blue;
     }
 
     p, .cd-read-more, .cd-date {
@@ -274,7 +263,7 @@ header {
         float: right;
         padding: .8em 1em;
         background: $link;
-        color: $color-3;
+        color: $white;
         @include border-radius;
 
         .no-touch &:hover {
@@ -296,7 +285,7 @@ header {
         height: 0;
         width: 0;
         border: 7px solid transparent;
-        border-right: 7px solid $color-3;
+        border-right: 7px solid $white;
     }
 
     @include MQ(M) {
@@ -322,7 +311,7 @@ header {
             top: 24px;
             left: 100%;
             border-color: transparent;
-            border-left-color: $color-3;
+            border-left-color: $white;
         }
 
         .cd-read-more {
@@ -345,7 +334,7 @@ header {
                 left: auto;
                 right: 100%;
                 border-color: transparent;
-                border-right-color: $color-3;
+                border-right-color: $white;
             }
 
             .cd-read-more {

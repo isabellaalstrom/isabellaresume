@@ -1,12 +1,41 @@
-﻿html {
+﻿@import "partials/layout";
+@import "partials/mixins";
+@import "partials/variables";
+
+html {
     height: 100%;
 }
+
 body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
     padding-top: 50px;
     padding-bottom: 20px;
+}
+
+a {
+    color: $link;
+    text-decoration: none;
+    font-family: $secondary-font;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+p {
+    @include font-size(20px);
+}
+
+h1, h2 {
+    font-family: $secondary-font;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .body-content {

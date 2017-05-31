@@ -18,3 +18,39 @@ $L:     1140px;
   }
 }
 
+
+$min-xs: 321px;
+$min-sm: 768px;
+$min-md: 1024px;
+$min-lg: 1224px;
+
+$max-xs: 320px;
+$max-sm: 767px;
+$max-md: 1023px;
+$max-lg: 1223px;
+
+//TEMPLATE FOR ALL MEDIA QUERYS
+//desktops and larger screens
+@mixin Desktop() {
+@media screen and (min-width: $min-lg) { @content; }
+}
+
+//ipad pro
+@mixin LargeTablet() {
+@media screen and (min-width: $min-md) and (max-width: $max-lg) { @content; }
+}
+
+//ipad
+@mixin Tablet() {
+@media screen and (min-width: $min-sm) and (max-width: $max-md) { @content; }
+}
+
+//iphone 6 and 6plus
+@mixin Phone() {
+@media screen and (min-width: $min-xs) and (max-width: $max-sm) { @content; }
+}
+
+//small phones (iphone 5 and smaller)
+@mixin SmallPhone(){
+@media screen and (max-width: $max-xs) { @content; }
+}

@@ -6,9 +6,9 @@
 ///
 /// @link https://goo.gl/54htLV
 ///
-/// @argument {color (hex)} $color-1
+/// @argument {color (hex)} $dark-blue
 ///
-/// @argument {color (hex)} $color-2
+/// @argument {color (hex)} $red
 ///
 /// @return {number (1-21)}
 ///
@@ -19,9 +19,9 @@
 ///
 /// @access private
 
-@function _contrast-ratio($color-1, $color-2) {
-  $-local-lightness-1: _lightness($color-1) + 0.05;
-  $-local-lightness-2: _lightness($color-2) + 0.05;
+@function _contrast-ratio($dark-blue, $red) {
+  $-local-lightness-1: _lightness($dark-blue) + 0.05;
+  $-local-lightness-2: _lightness($red) + 0.05;
 
   @if $-local-lightness-1 > $-local-lightness-2 {
     @return $-local-lightness-1 / $-local-lightness-2;
